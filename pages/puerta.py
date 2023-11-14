@@ -59,18 +59,18 @@ if img_file_buffer is not None:
     print(prediction)
     if prediction[0][0] >0.6:
        print('Abierto: ')
-       client1.publish("IMIA","{'gesto': 'Abierto'}",qos=0, retain=False)
+       client1.publish("IMIA","{'gesto': 'abrir'}",qos=0, retain=False)
        st.header('Abierto, con Probabilidad: '+str( prediction[0][0]) )
        #sound_file = 'hum_h.wav'
        #display(Audio(sound_file, autoplay=True))
        time.sleep(0.5)
     if prediction[0][1]>0.6:
-       print('Cerrado')
+       print('cerrar')
        client1.publish("IMIA","{'gesto': 'Cerrado'}",qos=0, retain=False)
        st.header('Cerrado, con Probabilidad: '+str( prediction[0][0]) )
        time.sleep(0.5)
     if prediction[0][2]>0.6:
-       print('Vacío')
+       print('vacio')
        client1.publish("IMIA","{'gesto': 'Vacío'}",qos=0, retain=False)
        st.header('Vacío, con Probabilidad: '+str( prediction[0][0]) )
        time.sleep(0.5)
