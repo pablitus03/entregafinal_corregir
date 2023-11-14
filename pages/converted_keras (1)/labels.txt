@@ -1,3 +1,0 @@
-0 abrir
-1 cerrar
-2 vacio
