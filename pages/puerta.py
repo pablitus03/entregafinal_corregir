@@ -57,7 +57,7 @@ if img_file_buffer is not None:
     # run the inference
     prediction = model.predict(data)
     print(prediction)
-    if prediction[0][0] >0.6:
+    if prediction[0][0] >0.3:
        print('abrir: ')
        client1.publish("IMIA","{'gesto': 'abrir'}",qos=0, retain=False)
        st.header('Abierto, con Probabilidad: '+str( prediction[0][0]) )
