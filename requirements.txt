@@ -1,0 +1,10 @@
+keras
+streamlit
+streamlit-webrtc
+numpy
+opencv-python-headless
+Pillow
+tensorflow
+paho-mqtt
+IPython
+httpcore-NetworkBackend
