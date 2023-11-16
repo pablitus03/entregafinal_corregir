@@ -25,7 +25,7 @@ def on_message(client, userdata, message):
     print(message_received)
 
 
-client1=paho.Client("Smart-Home")
+client1=paho.Client("Aplicacion2")
 client1.on_publish = on_publish
 client1.subscribe("Instructions")
 client1.on_message = on_message
