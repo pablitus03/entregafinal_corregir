@@ -23,7 +23,7 @@ def on_message(client, userdata, message):
 
 broker="157.230.214.127"
 port=1883
-client1= paho.Client("CARLOS")
+client1= paho.Client("Voz")
 client1.on_message = on_message
 
 
