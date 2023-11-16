@@ -25,7 +25,7 @@ def on_message(client, userdata, message):
     print(message_received)
 
 
-client1=paho.Client("Python")
+client1=paho.Client("Smart-Home")
 client1.on_publish = on_publish
 client1.subscribe("remote")
 client1.on_message = on_message
@@ -56,22 +56,23 @@ if img_file_buffer is not None:
 
     # run the inference
     prediction = model.predict(data)
+    
     print(prediction)
     if prediction[0][0] >0.3:
        print('abrir: ')
-       client1.publish("IMIA","{'gesto': 'abrir'}",qos=0, retain=False)
+       client1.publish("Instructions","{'Act1': 'abre la puerta'}",qos=0, retain=False)
        st.header('Abierto, con Probabilidad: '+str( prediction[0][0]) )
        #sound_file = 'hum_h.wav'
        #display(Audio(sound_file, autoplay=True))
        time.sleep(0.5)
     if prediction[0][1]>0.6:
        print('cerrar')
-       client1.publish("IMIA","{'gesto': 'cerrar'}",qos=0, retain=False)
+       client1.publish("Instructions","{'Act1': 'Cierra la Puerta'}",qos=0, retain=False)
        st.header('Cerrado, con Probabilidad: '+str( prediction[0][0]) )
        time.sleep(0.5)
     if prediction[0][2]>0.6:
        print('vacio')
-       client1.publish("IMIA","{'gesto': 'vacio'}",qos=0, retain=False)
+       client1.publish("Instructions","{'Act1': 'Cierra la Puerta'}",qos=0, retain=False)
        st.header('Vacío, con Probabilidad: '+str( prediction[0][0]) )
        time.sleep(0.5)
 
