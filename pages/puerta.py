@@ -27,7 +27,7 @@ def on_message(client, userdata, message):
 
 client1=paho.Client("Smart-Home")
 client1.on_publish = on_publish
-client1.subscribe("remote")
+client1.subscribe("Instructions")
 client1.on_message = on_message
 client1.connect(broker,port)
 
