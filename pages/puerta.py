@@ -67,12 +67,12 @@ if img_file_buffer is not None:
        time.sleep(0.5)
     if prediction[0][1]>0.6:
        print('cerrar')
-       client1.publish("Instructions","{'Act1': 'Cierra la Puerta'}",qos=0, retain=False)
+       client1.publish("Instructions","{'Act1': 'Cierra la puerta'}",qos=0, retain=False)
        st.header('Cerrado, con Probabilidad: '+str( prediction[0][0]) )
        time.sleep(0.5)
     if prediction[0][2]>0.6:
        print('vacio')
-       client1.publish("Instructions","{'Act1': 'Cierra la Puerta'}",qos=0, retain=False)
+       client1.publish("Instructions","{'Act1': 'Cierra la puerta'}",qos=0, retain=False)
        st.header('Vacío, con Probabilidad: '+str( prediction[0][0]) )
        time.sleep(0.5)
 
